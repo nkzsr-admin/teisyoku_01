@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>島ごはん ゆくる家 - 沖縄の温かい家庭料理</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'okinawa-red': '#D2691E',
+            'okinawa-orange': '#FF6B35',
+            'okinawa-blue': '#4A90E2',
+            'okinawa-green': '#7CB342',
+            'okinawa-sand': '#F5E6D3',
+            'okinawa-coral': '#FF7F7F'
+          },
+          fontFamily: {
+            'noto': ['Noto Sans JP', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Noto Sans JP', sans-serif; }
+    .hero-bg {
+      background: linear-gradient(rgba(74, 144, 226, 0.7), rgba(210, 105, 30, 0.7)),
+      url('https://static.gacraft.jp/advertisement_images/advertisement_images_internal_native_17908_b14a406e-da68-4190-9d1f-7f7ac796a284.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .section-fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .section-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-noto">
+<!-- Header -->
+<header class="bg-white shadow-lg fixed w-full top-0 z-50">
+  <nav class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-bold text-okinawa-red">
+        島ごはん ゆくる家
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#home" class="text-gray-700 hover:text-okinawa-blue transition duration-300">ホーム</a>
+        <a href="#menu" class="text-gray-700 hover:text-okinawa-blue transition duration-300">メニュー</a>
+        <a href="#about" class="text-gray-700 hover:text-okinawa-blue transition duration-300">店舗案内</a>
+        <a href="#contact" class="text-gray-700 hover:text-okinawa-blue transition duration-300">アクセス</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-3 space-y-2">
+      <a href="#home" class="block py-2 text-gray-700 hover:text-okinawa-blue transition duration-300">ホーム</a>
+      <a href="#menu" class="block py-2 text-gray-700 hover:text-okinawa-blue transition duration-300">メニュー</a>
+      <a href="#about" class="block py-2 text-gray-700 hover:text-okinawa-blue transition duration-300">店舗案内</a>
+      <a href="#contact" class="block py-2 text-gray-700 hover:text-okinawa-blue transition duration-300">アクセス</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white pt-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-pulse">
+      ようこそ、島ごはん ゆくる家へ
+    </h1>
+    <p class="text-xl md:text-2xl mb-8 font-light">
+      沖縄の心温まる家庭料理をお届けします
+    </p>
+    <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+      <a href="#menu" class="inline-block bg-okinawa-orange hover:bg-okinawa-coral text-white font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+        メニューを見る
+      </a>
+      <a href="#contact" class="inline-block bg-transparent border-2 border-white hover:bg-white hover:text-okinawa-blue text-white font-semibold py-3 px-8 rounded-full transition duration-300">
+        アクセス・予約
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Menu Section -->
+<section id="menu" class="py-16 bg-okinawa-sand">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12 section-fade">
+      <h2 class="text-4xl font-bold text-okinawa-red mb-4">おすすめメニュー</h2>
+      <p class="text-gray-600 text-lg">島の恵みをたっぷり使った、心も体も温まる料理の数々</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Menu Item 1 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover section-fade">
+        <img src="https://img.rurubu.jp/img_srw/andmore/images/0000687867/qjkNwpG6LZY8TN3LXlhX9RJlNXhTCaY4d7e6yD7t.jpg"
+             alt="沖縄そば" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-okinawa-red mb-2">沖縄そば</h3>
+          <p class="text-gray-600 mb-3">昔ながらの製法で作った手打ち麺に、豚骨ベースのあっさりスープ</p>
+          <p class="text-okinawa-orange font-bold text-lg">¥850</p>
+        </div>
+      </div>
+
+      <!-- Menu Item 2 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover section-fade">
+        <img src="https://img.rurubu.jp/img_srw/andmore/images/0000687982/IE03G4TOO0PrguPMNGA4DaYX3Jc3XestkECVLWqq.jpg"
+             alt="ゴーヤチャンプルー" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-okinawa-red mb-2">ゴーヤチャンプルー</h3>
+          <p class="text-gray-600 mb-3">新鮮なゴーヤと島豆腐、豚肉を炒めた沖縄の代表料理</p>
+          <p class="text-okinawa-orange font-bold text-lg">¥720</p>
+        </div>
+      </div>
+
+      <!-- Menu Item 3 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover section-fade">
+        <img src="https://www.uminchi.com/wp/wp-content/themes/uminchi/img/about/img_point_umibudou_01.png"
+             alt="海ぶどう" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-okinawa-red mb-2">海ぶどう</h3>
+          <p class="text-gray-600 mb-3">プチプチ食感が楽しい沖縄の海の恵み、三杯酢でさっぱりと</p>
+          <p class="text-okinawa-orange font-bold text-lg">¥650</p>
+        </div>
+      </div>
+
+      <!-- Menu Item 4 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover section-fade">
+        <img src="https://tblg.k-img.com/restaurant/images/Rvw/65620/150x150_square_65620873.jpg"
+             alt="島野菜定食" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-okinawa-red mb-2">島野菜定食</h3>
+          <p class="text-gray-600 mb-3">旬の島野菜をたっぷり使った栄養満点の定食セット</p>
+          <p class="text-okinawa-orange font-bold text-lg">¥1,200</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12 section-fade">
+      <h2 class="text-4xl font-bold text-okinawa-red mb-4">店舗案内</h2>
+      <p class="text-gray-600 text-lg">温かい心でお迎えする、家族経営の小さなお店です</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="section-fade">
+        <img src="https://static.stayjapan.com/room/de3/8ee/6e4/234952_thumb.JPG?1640328079"
+             alt="店内の様子" class="w-full rounded-lg shadow-lg">
+      </div>
+
+      <div class="section-fade">
+        <h3 class="text-2xl font-semibold text-okinawa-red mb-6">お店について</h3>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          「ゆくる」は沖縄の言葉で「ゆっくり」という意味です。慌ただしい日常を忘れて、
+          ゆっくりと島の味を楽しんでいただけるよう、心を込めてお料理をお作りしています。
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-okinawa-orange mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <p class="font-semibold text-gray-800">営業時間</p>
+              <p class="text-gray-600">11:00～15:00 / 17:00～21:00</p>
+              <p class="text-sm text-gray-500">定休日：水曜日</p>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-okinawa-orange mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <p class="font-semibold text-gray-800">所在地</p>
+              <p class="text-gray-600">沖縄県那覇市首里石嶺町1-2-3</p>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-okinawa-orange mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            <div>
+              <p class="font-semibold text-gray-800">予約・お問い合わせ</p>
+              <p class="text-gray-600">098-123-4567</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-okinawa-blue text-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12 section-fade">
+      <h2 class="text-4xl font-bold mb-4">アクセス・予約</h2>
+      <p class="text-xl">お気軽にお越しください</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="section-fade">
+        <h3 class="text-2xl font-semibold mb-6">交通アクセス</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <svg class="w-6 h-6 mt-1 mr-3 text-okinawa-coral" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <p class="font-semibold">電車でお越しの場合</p>
+              <p class="text-okinawa-sand">ゆいレール首里駅より徒歩8分</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <svg class="w-6 h-6 mt-1 mr-3 text-okinawa-coral" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h12v8H4V6z" clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <p class="font-semibold">お車でお越しの場合</p>
+              <p class="text-okinawa-sand">駐車場5台完備（無料）</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <h4 class="text-xl font-semibold mb-4">ご予約について</h4>
+          <p class="text-okinawa-sand mb-4">
+            お席のご予約は電話またはSNSのダイレクトメッセージにて承ります。
+            特に夕食時間帯は混雑することがございますので、事前のご予約をおすすめしております。
+          </p>
+          <a href="tel:098-123-4567" class="inline-block bg-okinawa-orange hover:bg-okinawa-coral text-white font-semibold py-3 px-6 rounded-full transition duration-300">
+            電話で予約する
+          </a>
+        </div>
+      </div>
+
+      <div class="section-fade">
+        <div class="bg-white rounded-lg p-6 text-gray-800">
+          <h3 class="text-2xl font-semibold text-okinawa-red mb-4">地図</h3>
+          <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
+            <p class="text-gray-500">Google Mapsが表示されます</p>
+          </div>
+          <div class="mt-4">
+            <p class="font-semibold text-okinawa-red">島ごはん ゆくる家</p>
+            <p class="text-gray-600">〒903-0804</p>
+            <p class="text-gray-600">沖縄県那覇市首里石嶺町1-2-3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <h3 class="text-2xl font-bold text-okinawa-coral">島ごはん ゆくる家</h3>
+        <p class="text-gray-400 mt-2">沖縄の心温まる家庭料理</p>
+      </div>
+
+      <div class="flex space-x-6">
+        <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-okinawa-coral transition duration-300">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" class="text-gray-400 hover:text-okinawa-coral transition duration-300">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+      <p class="text-gray-400">
+        &copy; 2025 島ごはん ゆくる家. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+      // Close mobile menu if open
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
+  // Scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.section-fade').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Header background on scroll
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+      header.classList.add('bg-opacity-95');
+    } else {
+      header.classList.remove('bg-opacity-95');
+    }
+  });
+</script>
+</body>
+</html>
